@@ -1,0 +1,29 @@
+#!/sbin/sh
+##########################################################################################
+# KSU SSH Tunnel Installer Script
+##########################################################################################
+umask 022
+
+OUTFD=$2
+ZIPFILE=$3
+
+ui_print() {
+  echo "$1"
+}
+
+ui_print "************************************"
+ui_print "*      KSU SSH Tunnel Manager      *"
+ui_print "*        by WinterSold1er          *"
+ui_print "************************************"
+
+MODPATH="/data/adb/modules/ksu-ssh-tunnel"
+mkdir -p "$MODPATH"
+unzip -o "$ZIPFILE" -x 'META-INF/*' -d "$MODPATH" >/dev/null 2>&1
+
+chmod -R 755 "$MODPATH"
+chmod 755 "$MODPATH/service.sh" "$MODPATH/action.sh"
+chmod -R 755 "$MODPATH/scripts"
+chmod 644 "$MODPATH/module.prop" "$MODPATH/tunnels.json" "$MODPATH/webroot/index.html"
+mkdir -p "$MODPATH/logs" "$MODPATH/run"
+
+ui_print "- Installation completed successfully!"

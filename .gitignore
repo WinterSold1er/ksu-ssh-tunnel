@@ -1,0 +1,9 @@
+*.log
+logs/
+run/
+*.pid
+.DS_Store
+*.tmp
+dist/
+build/
+*.zip

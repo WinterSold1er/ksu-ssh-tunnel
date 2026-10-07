@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "autostart": true,
+    "default_identity": "/data/adb/ssh/root/.ssh/id_ed25519",
+    "keepalive_interval": 15,
+    "keepalive_count_max": 3
+  },
+  "tunnels": [
+    {
+      "id": "dsh-web",
+      "name": "DSH Web Service",
+      "enabled": true,
+      "type": "local",
+      "remote_host": "100.92.178.83",
+      "remote_port": 22,
+      "remote_user": "csy",
+      "identity_file": "/data/adb/ssh/root/.ssh/id_ed25519",
+      "local_host": "127.0.0.1",
+      "local_port": 3080,
+      "target_host": "127.0.0.1",
+      "target_port": 3080,
+      "extra_args": ""
+    }
+  ]
+}
